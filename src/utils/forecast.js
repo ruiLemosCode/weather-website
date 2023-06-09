@@ -12,12 +12,12 @@ const getForecast = (lat, long, cb) => {
       cb("Unable to find location", undefined);
     } else {
       const {
-        current: { temperature, feelslike, weather_descriptions },
+        current: { temperature, feelslike, weather_descriptions, humidity },
       } = body;
 
       cb(
         undefined,
-        `${weather_descriptions[0]}. It is currently ${temperature}º out. It feels like ${feelslike}º`
+        `${weather_descriptions[0]}. It is currently ${temperature}º out. It feels like ${feelslike}º. The humidity is ${humidity}%`
       );
     }
   });
