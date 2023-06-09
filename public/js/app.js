@@ -4,7 +4,7 @@ const messageOne = document.querySelector("#message-1");
 const messageTwo = document.querySelector("#message-2");
 
 const fetchForcast = (location) => {
-  fetch(`http://localhost:3000/weather?address=${location}`).then((res) => {
+  fetch(`/weather?address=${location}`).then((res) => {
     res.json().then(({ error, forecast }) => {
       if (error) {
         messageOne.textContent = error;
